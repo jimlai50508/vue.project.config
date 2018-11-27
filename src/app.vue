@@ -1,11 +1,11 @@
-<template>
-<div class='title'>{{text}}</div>
+<template lang='pug'>
+.title {{text}}
 </template>
 <script>
 export default {
     data() {
         return {
-            text: 'Hello World!'
+            text: 'Hello World'
         }
     } 
 }
@@ -14,5 +14,3 @@ export default {
 .title
     color: #bbb
 </style>
-
-

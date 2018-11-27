@@ -1,7 +1,7 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
-module.exports = {
+let config = {
     entry: path.join(__dirname, './src/index.js'),
     output: {
         filename: 'build.js',
@@ -12,6 +12,10 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
+            },
+            {
+                test: /\.pug$/,
+                loader: 'pug-plain-loader'
             },
             {
                 test: /\.sass$/,
@@ -28,6 +32,8 @@ module.exports = {
     ],
     devServer: {
         port: 3000,
-        contentBase: './dist'
+        contentBase: './dist',
+        open: true
     }
 }
+module.exports = config
